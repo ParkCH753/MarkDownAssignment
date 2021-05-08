@@ -1,3 +1,5 @@
+https://github.com/ParkCH753/MarkDownAssignment
+
 <br>MarkDown 설명서를 작성할 것입니다. <br>
 혼자하면 꽤나 걸릴 것 같은데 다행히 같이 해준다는 친구가 있어서 친구와 협력을 하려고 합니다.<br>
 그럼 먼저 저희가 git과 github을 사용할 줄 알아야겠네요. git 사용법부터 익혀볼까요?<br>
@@ -71,6 +73,8 @@ git에 대한 여러가지 정보를 수정하고 설정할 수 있습니다.<br
 
 파일도 만들고 열심히 설명서를 작성하다가 왔습니다. 오늘은 여기까지 하고 백업파일을 만들어 git에 올려볼까요?
 
+
+### status
 먼저 git에 작업을 하기 위해서는 파일들의 상태를 보아야 합니다.<br>
 다음 명령어로 확인할 수 있습니다.
 
@@ -83,6 +87,7 @@ git에 대한 여러가지 정보를 수정하고 설정할 수 있습니다.<br
 
 git에다가 버전을 만드는 것을 `commit`이라고 합니다. 그런데 git은 버전을 만드는데 있어서 쓸데없는 파일들까지 commit 하는 것을 방지하기 위해 파일 각각을 올려서 commit하도록 되어있습니다.
 
+### add
 즉, 먼저 git이 어떤 파일들을 commit할지 선택을 해주면 그 파일들만 일괄 commit한다는 뜻입니다. <br> 우리는 `add` 명령을 통해 git이 파일을 추적하도록 해줄 수 있습니다.
 추가해준 뒤 상태를 다시 볼까요?
 <br><br>
@@ -94,7 +99,7 @@ git에다가 버전을 만드는 것을 `commit`이라고 합니다. 그런데 g
 <br>![add](\pictures\4_add.png)<br><br>
 
 오 초록색으로 뜨니까 그래도 조금 기분이 좋네요.
-
+### commit
 이제 올라간 파일들은 모두 commit을 할 수 있는 파일들이라는 뜻입니다. 이제 진짜 commit만 해주면 되겠네요! <br><br>
 
     git commit -am "First commit"
@@ -103,6 +108,7 @@ git에다가 버전을 만드는 것을 `commit`이라고 합니다. 그런데 g
 ![commit](\pictures\5_commit.png)
 <br><br> 명령어 뒤에 붙은 `"First commit"`은 이 버전에 대한 설명을 의미합니다. 로그에서 이 버전이 어떤 수정사항/내용의 버전인지 확인할 수 있습니다.
 
+### log
 로그에 보면 먼저 작성자와 이메일, 등록시간이 나오고 노란색으로 오버플로우가 일어난 것만 같은 문자열이 하나 보입니다.
 이 문자열이 log의 ID로 나중에 버전들을 식별할 때 사용됩니다.<br><br>
 
@@ -204,6 +210,7 @@ branch라는건,, 윳놀이 말이라고 생각해도 될 것 같아요. 각자 
 
 따로 생성하지 않아도 가장 처음부터 있는 말은 master라고 네이밍되어있어요. 지난번에 그냥 지나갔지만 log ID 옆에 보이던 HEAD -> master표시에서의 master가 이것이었어요.
 
+### scheckout
 HEAD는 내가 지금 바라보고 있는 branch의 위치를 뜻해요. 만약 HEAD가 box를 가르키고 있는 건 사용자가 box의 위치에서 작업을 하겠다는 뜻이죠.<br>
 지금은 HEAD가 master를 가리키고 있으니까 box로 시선을 옯겨준다음, 설명서를 box형식으로 만들어볼까요?
 
@@ -236,13 +243,14 @@ branch 목록과 하늘색 글씨를 통해서 누가봐도 box로 시선이 옮
 그림을 보니 왜 이름이 branch라고 붙었는지 조금은 이해가 가시죠?
 
 <br><br>
+
 ## 3) branch 병합하기
 그런데 작업을 하고 보니 '6.코드작성'부분은 그대로 코드 블록을 이용하는 것이 좋을 것 같고,, '6.1코드'부분은 하던대로 box로 하는 것이 좋을 것 같아요! <br>그럼 이때 두 파일을 부분부분 가져와서 병합해야겠죠? 이때 사용할 수 있는 명령어가 rebase와 merge입니다.
 <br>둘 다 파일들을 병합한다는 것은 동일한데, 로그를 어떻게 남기느냐의 방식이 조금 다릅니다.
 <br><br>
 
 > ## 주의!
->두 명령어들의 차이저을 설명하기 전에 먼저 병합할 때의 주의점을 짚고 넘어갈게요! <br>
+>두 명령어들의 차이점을 설명하기 전에 먼저 병합할 때의 주의점을 짚고 넘어갈게요! <br>
 병합을 진행하게 되면 두 branch의 다른 작업상황들이 하나의 버전으로 뭉치게 돼요. 그런데 만약 같은 파일의 동일한 행의 작업 상황이 다르다면 git은 둘 중 어느 것으로 병합해야 할 지 모르기 때문에 이러한 충돌 상황에서는 병합을 하지 못하도록 만들어요.그래서 실제로는 동일한 파일을 여러 개발자가 수정하지 못하도록 정해놓는 식으로 작업이 이루어져요.
 >
 >그런데 우리 설명서는 형식은 동일하더라도 box branch의 부분과 master branch의 부분의 '6.코드블럭'부분이 겹치게 되어서 conflict가 발생하게 될거에요.
@@ -260,6 +268,8 @@ branch 목록과 하늘색 글씨를 통해서 누가봐도 box로 시선이 옮
 
 
 <br><br>
+
+### merge
 먼저 merge부터 알아보겠습니다.  merge는 모든 로그를 그대로 남기면서 병합합니다. 사진을 보는 것이 훨씬 이해가 빠를 것 같으니 바로 해보도록 하죠.
 
     git merge box //master를 box와 병합
@@ -268,7 +278,7 @@ branch 목록과 하늘색 글씨를 통해서 누가봐도 box로 시선이 옮
 
 와! 잘 합쳐졌네요 ㅎㅎ
 
-
+### rebase
 rebase도 동일하게 병합을 할 때 사용하는 명령어입니다. 하지만 조금 다른 것은 버전 기록에 있어서 조금 다르다고 말씀드렸죠?
 
 merge는 방금처럼 두 갈래로 갈라졌던 것이 그대로 남지만 rebase는 병합하면서 버전들의 log들도 한번에 합쳐 깔끔하게 만들어줍니다.
@@ -290,13 +300,15 @@ merge는 방금처럼 두 갈래로 갈라졌던 것이 그대로 남지만 reba
 github에 들어가셔서 과제를 위한 새로운 Repository를 만들어줍시다.
 
 잘 만드셨면 다음 커멘드를 입력하라고 뜰 거에요. 그대로 입력해줍시다!
-
+### remote
     git remote add origin https://github.com/ParkCH753/MarkDownAssignment.git
     git branch -M main
     git push -u origin main
 
 일단 첫번째 문장은 origin이라는 이름으로 github의 주소를 저장하겠다는 의미로 보시면 돼요!
 
+
+### push
 그리고 Main이라는 branch를 만들어주고 세번째 문장을 통해서 origin으로 현재 branch의 내용을 넣어준다는 의미에요.<br>
 그리고 push 뒤에 준 옵션 덕분에 이후로 push작업을 할때는 뒤에 옵션 없이 사용하면 돼요.
 
@@ -308,7 +320,52 @@ github에 들어가셔서 과제를 위한 새로운 Repository를 만들어줍�
 github에 올렸더니 친구가 README.md 파일을 작성했다고 하네요?
 <br> 한번 가져와봅시다. 사용하는 명령어는 `pull`이에요!
 <br> 앞에서 push할 때 -u 옵션을 붙여둔 덕분에 여기서도 그냥 `pull`만 사용하면 돼요.
+### pull
 
     git pull
 
 ![pull](\pictures\15_pull.png)
+
+그럼 저희도 설명서를 마저 작성하고 github에 올린 뒤 마무리해볼까요?
+
+
+
+<br><br><br>
+
+### clone
+
+몇번 헤매긴 했지만 일단 설명서는 우여곡절 끝에 github에 다 올렸네요. 이왕김에 clone 명령어도 배워보도록 할까요?<br>
+clone은 pull하고 동일한 효과를 내요. 하지만 다른 점은, clone은 github등의 저장소에 있는 repository를 쌩 처음 파일에 가져올 때 사용하고 pull은 자유롭게 가져온다는 차이가 있죠.
+
+새로운 폴더를 만들고 clone을 한번 시험해볼까요?<br>
+
+    git clone https://github.com/ParkCH753/MarkDownAssignment
+
+![clone](\pictures\16_clone.png)
+
+아까 clone은 처음 생성할 때 사용하는 것이라 했죠? 그래서 따로 `git init`하지 않은 상태에서 진행해도 clone이 생성돼요.
+
+
+<br>
+
+그럼 이상으로 git 설명은 마칠께요. 수고했어요!
+
+|명령|위치|
+| :---:| :---: |
+|init|[init](##git-폴더-설정)|
+|config|[config](##git-사용자-설정)|
+|status|[status](###status)
+|add|[add](###add)
+|commit|[commit](###commit)|
+|log|[log](###log)|
+|reset|[reset](##1\)-버전-삭제하기)|
+|--hard|[--hard](##1\)-버전-삭제하기)|
+|tag|[tag](##2\)-Tag-붙이기)|
+|branch|[branch](##1\)-branch-생성)|
+|checkout|[checkout](###checkout)|
+|merge|[merge](###merge)|
+|rebase|[rebase](###rebase)|
+|remote|[remote](###remote)|
+|push|[push](###push)|
+|pull|[pull](###pull)|
+|clone|[clone](###clone)|
