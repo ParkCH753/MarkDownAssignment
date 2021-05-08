@@ -127,20 +127,21 @@ git에다가 버전을 만드는 것을 `commit`이라고 합니다. 그런데 g
 <br><br>![5_commit](https://user-images.githubusercontent.com/81542290/117533854-e827c400-b029-11eb-9c65-985fb2f3c92f.png)
 <br><br> 명령어 뒤에 붙은 `"First commit"`은 이 버전에 대한 설명을 의미합니다. 로그에서 이 버전이 어떤 수정사항/내용의 버전인지 확인할 수 있습니다.
 
+옵션에 대해서도 설명해드리겠습니다.<br>먼저 `-m`은 버전의 메모를 간단하게 작성할 때 사용합니다. `-m`이 없이 사용하면 vim이 열리면서 메모를 작성하게 되는데, `-m`을 붙이면 명령행 뒤에 적어만 주어도 됩니다.
+
+`-a`는 앞에서 나온 add명령을 사용하지 않고 모든 파일들을 commit해버리는 옵션입니다. 지금같은 간단한 작업에는 훨씬 편리합니다.
+
 ### log
 로그에 보면 먼저 작성자와 이메일, 등록시간이 나오고 노란색으로 오버플로우가 일어난 것만 같은 문자열이 하나 보입니다.
 이 문자열이 log의 ID로 나중에 버전들을 식별할 때 사용됩니다.<br><br>
 
 |옵션| 용도| 
 |---|---|
-| -m |간단한 메모|
-| -a | add 생략 |
+| -p |버전 별 달라진 점|
+| --graph | 히스토리를 그래프로 |
 
 <br>
 
-먼저 `-m`은 버전의 메모를 간단하게 작성할 때 사용합니다. `-m`이 없이 사용하면 vim이 열리면서 메모를 작성하게 되는데, `-m`을 붙이면 명령행 뒤에 적어만 주어도 됩니다.
-
-`-a`는 앞에서 나온 add명령을 사용하지 않고 모든 파일들을 commit해버리는 옵션입니다. 지금같은 간단한 작업에는 훨씬 편리합니다.
 <br><br><br><br>
 
 # 2. 버전 관리하기
@@ -155,7 +156,7 @@ git에다가 버전을 만드는 것을 `commit`이라고 합니다. 그런데 g
 ![6_log2](https://user-images.githubusercontent.com/81542290/117533855-e8c05a80-b029-11eb-9f90-b9048623be8f.png)
 
 
-`(HEAD ->master)`가 지금 현재 파일의 ???
+`(HEAD ->master)`가 지금 현재 버전의 위치라는 뜻입니다. 자세한건 이후에 다시 설명드리겠습니다.
 
 근데 작업을 하고 나니,, 어째 처음에 한걸로 돌아가는게 나아보입니다. <br>
 작업한 내용은 과감히 삭제하고 한번 되돌아가 봅시다.
@@ -177,6 +178,11 @@ HEAD가 First commit에 위치한다고 뜨면서 log에도 두번째 커밋이 
 
 
 이외에 아무것도 붙이지 않은 `--mixed`와 `--soft` 도 있습니다.
+
+|옵션| 용도| 
+|---|---|
+| --mixed |인덱스는 남아있지만 commit 하기 위해서는 변경사항 다시 입력해야 함|
+| --soft | 이후 내용이 지워지지 않아 다시 commit 할 수 있는 상태 |
 <br><br><br>
 
 ## 2) Tag 붙이기
@@ -223,13 +229,21 @@ branch는 말 그대로 가지를 친다는 의미로, 한 작업을 따로 한 
     git branch          //branch 목록
     git log
 
+|옵션| 용도| 
+|---|---|
+| -r | 원격 저장소의 branch 확인 |
+| -v | 브랜치의 마지막 커밋 메세지 확인 |
+| -d | 브랜치 삭제 |
+| -M | 브랜치 생성하고 새 브랜치로 이동|
+
+
 ![9_CreateBranch](https://user-images.githubusercontent.com/81542290/117533861-e9f18780-b029-11eb-8713-51acfeeb1d45.png)
 
 branch라는건,, 윳놀이 말이라고 생각해도 될 것 같아요. 각자 위치에서 있다가 움직이고 싶을 때 말을 골라서 움직이면 되듯이 지금은 현재 버전에 box라는 말을 놓은 거에요. 
 
 따로 생성하지 않아도 가장 처음부터 있는 말은 master라고 네이밍되어있어요. 지난번에 그냥 지나갔지만 log ID 옆에 보이던 HEAD -> master표시에서의 master가 이것이었어요.
 
-### scheckout
+### checkout
 HEAD는 내가 지금 바라보고 있는 branch의 위치를 뜻해요. 만약 HEAD가 box를 가르키고 있는 건 사용자가 box의 위치에서 작업을 하겠다는 뜻이죠.<br>
 지금은 HEAD가 master를 가리키고 있으니까 box로 시선을 옯겨준다음, 설명서를 box형식으로 만들어볼까요?
 
@@ -237,6 +251,11 @@ HEAD는 내가 지금 바라보고 있는 branch의 위치를 뜻해요. 만약 
 
     git checkout box
     git branch
+
+|옵션| 용도| 
+|---|---|
+| -b | 가져올 브런치에서 새로운 브런치 생성하고 새 브런치로 이동 |
+| -t |  원격저장소에서 원격브랜치명으로 로컬브랜치생성 |
 
 ![10_Checkout](https://user-images.githubusercontent.com/81542290/117533862-e9f18780-b029-11eb-8f01-b730a1101bec.png)
 
@@ -293,6 +312,12 @@ branch 목록과 하늘색 글씨를 통해서 누가봐도 box로 시선이 옮
 
     git merge box //master를 box와 병합
 
+|옵션| 용도| 
+|---|---|
+| --squash | 커밋 이력을 모두 제거하고 병합 |
+| --no-ff |  fast-forward 방식에서, 병합됨을 나타내는 commit 메세지 생성 |
+| --abort | conflict 시, merge 취소 |
+
 ![13_merge](https://user-images.githubusercontent.com/81542290/117533845-e5c56a00-b029-11eb-9d0e-175114c382dc.png)
 
 와! 잘 합쳐졌네요 ㅎㅎ
@@ -303,6 +328,12 @@ rebase도 동일하게 병합을 할 때 사용하는 명령어입니다. 하지
 merge는 방금처럼 두 갈래로 갈라졌던 것이 그대로 남지만 rebase는 병합하면서 버전들의 log들도 한번에 합쳐 깔끔하게 만들어줍니다.
 
     git rebase box
+
+|옵션| 용도| 
+|---|---|
+| -i | 이미 commit된 history를 변경하거나 삭제 |
+| --abort |  conflict 시, rebase 취소 |
+| --continue | conflict 시, 충돌을 해소한 후 다시 진행 |
 
 ![14_rebase](https://user-images.githubusercontent.com/81542290/117533846-e5c56a00-b029-11eb-8865-e26f0c571ec1.png)
 
@@ -324,6 +355,12 @@ github에 들어가셔서 과제를 위한 새로운 Repository를 만들어줍�
     git branch -M main
     git push -u origin main
 
+|옵션| 용도| 
+|---|---|
+| -v | 리모트 저장소의 단축이름과 URL 표시 |
+
+
+
 일단 첫번째 문장은 origin이라는 이름으로 github의 주소를 저장하겠다는 의미로 보시면 돼요!
 
 
@@ -332,6 +369,10 @@ github에 들어가셔서 과제를 위한 새로운 Repository를 만들어줍�
 그리고 push 뒤에 준 옵션 덕분에 이후로 push작업을 할때는 뒤에 옵션 없이 사용하면 돼요.
 
     git push
+
+|옵션| 용도| 
+|---|---|
+| -u | `git push -u origin master`  <br>앞으로 master 로컬 저장소를 자동으로 origin 원격저장소의 브랜치로 연결 |
 
 이제 github 페이지에 들어가면 저희가 작성한 코드가 있는 걸 볼 수 있어요.
 
@@ -342,6 +383,10 @@ github에 올렸더니 친구가 README.md 파일을 작성했다고 하네요?
 ### pull
 
     git pull
+
+|옵션| 용도| 
+|---|---|
+| origin <원격 브랜치명> | `git push origin main`  <br>원격 브랜치에서 현재 브랜치로 가져옴 |
     
 ![15_pull](https://user-images.githubusercontent.com/81542290/117533847-e65e0080-b029-11eb-8bc9-0f91171dab40.png)
 
