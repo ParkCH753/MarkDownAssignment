@@ -352,20 +352,20 @@ clone은 pull하고 동일한 효과를 내요. 하지만 다른 점은, clone�
 
 |명령|위치|
 | :---:| :---: |
-|init|[init](##gitgit)|
-|config|[config](##git-사용자-설정)|
-|status|[status](###status)
-|add|[add](###add)
-|commit|[commit](###commit)|
+|init|[init](#init)|
+|config|[config](#git-사용자-설정)|
+|status|[status](#status)
+|add|[add](#add)
+|commit|[commit](#commit)|
 |log|[log](###log)|
-|reset|[reset](##1\)-버전-삭제하기)|
-|--hard|[--hard](##1\)-버전-삭제하기)|
-|tag|[tag](##2\)-Tag-붙이기)|
-|branch|[branch](##1\)-branch-생성)|
-|checkout|[checkout](###checkout)|
-|merge|[merge](###merge)|
-|rebase|[rebase](###rebase)|
-|remote|[remote](###remote)|
-|push|[push](###push)|
-|pull|[pull](###pull)|
-|clone|[clone](###clone)|
+|reset|[reset](#1\)-버전-삭제하기)|
+|--hard|[--hard](#1\)-버전-삭제하기)|
+|tag|[tag](#2\)-Tag-붙이기)|
+|branch|[branch](#1\)-branch-생성)|
+|checkout|[checkout](#checkout)|
+|merge|[merge](#merge)|
+|rebase|[rebase](#rebase)|
+|remote|[remote](#remote)|
+|push|[push](#push)|
+|pull|[pull](#pull)|
+|clone|[clone](#clone)|
