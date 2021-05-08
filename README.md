@@ -28,8 +28,8 @@ git 명령어는 맨 앞에 git을 붙이고 뒤에 명령어, 옵션 등을 붙
 
 먼저 작업을 할 폴더로 이동해준뒤 이 폴더에서 git으로 작업을 할 것이라는 표시를 해주어야 합니다.
 
-![폴더생성](.\pictures\0_fordercreate.png)
-![init](.\pictures\1_init.png)<br>
+![0_fordercreate](https://user-images.githubusercontent.com/81542290/117533900-14dbdb80-b02a-11eb-8973-0f77d94eaa9b.png)
+![1_init](https://user-images.githubusercontent.com/81542290/117533850-e6f69700-b029-11eb-98ab-e2ad3742624b.png)<br>
 
 <br>
 리눅스와 동일하게 파일을 만들어준뒤
@@ -53,7 +53,7 @@ git으로 기록을 남길 땐 작성자가 누구인지 알려야 합니다. �
 
 
 
-![config](.\pictures\2_config.png)
+![2_config](https://user-images.githubusercontent.com/81542290/117533851-e78f2d80-b029-11eb-8ac1-49ca73543797.png)
 
 <br>
 이름과 이메일을 등록할 경우 다음과 같은 명령어를 입력합니다.
@@ -83,7 +83,7 @@ git에 대한 여러가지 정보를 수정하고 설정할 수 있습니다.<br
     git status
 
 
-![status](.\pictures\3_status.png)
+![3_status](https://user-images.githubusercontent.com/81542290/117533852-e78f2d80-b029-11eb-84c4-b4adbb439a85.png)
 
 <br>보아하니,, 빨간색으로,, 우리가 작성한 설명서가 있고 untracked 되어있다고 뜨네요?<br>
 
@@ -98,7 +98,7 @@ git에다가 버전을 만드는 것을 `commit`이라고 합니다. 그런데 g
     git add MarkDownAssignment.md
     git status
 
-<br>![add](.\pictures\4_add.png)<br><br>
+<br>![4_add](https://user-images.githubusercontent.com/81542290/117533853-e827c400-b029-11eb-8003-2676d1d83f69.png)<br><br>
 
 오 초록색으로 뜨니까 그래도 조금 기분이 좋네요.
 ### commit
@@ -107,7 +107,7 @@ git에다가 버전을 만드는 것을 `commit`이라고 합니다. 그런데 g
     git commit -am "First commit"
     git log
 
-![commit](.\pictures\5_commit.png)
+![5_commit](https://user-images.githubusercontent.com/81542290/117533854-e827c400-b029-11eb-9c65-985fb2f3c92f.png)
 <br><br> 명령어 뒤에 붙은 `"First commit"`은 이 버전에 대한 설명을 의미합니다. 로그에서 이 버전이 어떤 수정사항/내용의 버전인지 확인할 수 있습니다.
 
 ### log
@@ -135,7 +135,7 @@ git에다가 버전을 만드는 것을 `commit`이라고 합니다. 그런데 g
 
 작업을 하고 나서 버전을 하나 더 만들게 되었습니다.<br> log가 두개가 되었죠?
 
-![log2](.\pictures\6_log2.png)
+![6_log2](https://user-images.githubusercontent.com/81542290/117533855-e8c05a80-b029-11eb-9f90-b9048623be8f.png)
 
 
 `(HEAD ->master)`가 지금 현재 파일의 ???
@@ -151,7 +151,7 @@ git에다가 버전을 만드는 것을 `commit`이라고 합니다. 그런데 g
 
     git reset --hard 451b80db7cb66c543facfbf05f4de2aa04f19645
 
-![reset](.\pictures\7_reset.png)
+![7_reset](https://user-images.githubusercontent.com/81542290/117533857-e8c05a80-b029-11eb-8cdf-ef270ec17068.png)
 
 
 HEAD가 First commit에 위치한다고 뜨면서 log에도 두번째 커밋이 보이지 않네요.
@@ -173,7 +173,7 @@ HEAD가 First commit에 위치한다고 뜨면서 log에도 두번째 커밋이 
     git tag         //tag 목록 보기
     git log
 
-![tag](.\pictures\8_tag.png)
+![8_tag](https://user-images.githubusercontent.com/81542290/117533859-e958f100-b029-11eb-8276-12870aa991b8.png)
 
 태그 목록과 로그에 Tag가 붙여진 걸 볼 수 있습니다. 
 
@@ -206,7 +206,7 @@ branch는 말 그대로 가지를 친다는 의미로, 한 작업을 따로 한 
     git branch          //branch 목록
     git log
 
-![create branch](.\pictures\9_CreateBranch.png)
+![9_CreateBranch](https://user-images.githubusercontent.com/81542290/117533861-e9f18780-b029-11eb-8713-51acfeeb1d45.png)
 
 branch라는건,, 윳놀이 말이라고 생각해도 될 것 같아요. 각자 위치에서 있다가 움직이고 싶을 때 말을 골라서 움직이면 되듯이 지금은 현재 버전에 box라는 말을 놓은 거에요. 
 
@@ -221,7 +221,7 @@ HEAD는 내가 지금 바라보고 있는 branch의 위치를 뜻해요. 만약 
     git checkout box
     git branch
 
-![checkout](.\pictures\10_Checkout.png)
+![10_Checkout](https://user-images.githubusercontent.com/81542290/117533862-e9f18780-b029-11eb-8f01-b730a1101bec.png)
 
 branch 목록과 하늘색 글씨를 통해서 누가봐도 box로 시선이 옮겨진 걸 알 수 있겠죠? 이제 이 상태에서 작업을 한 후, commit을 하면 branch와 master는 다른 방향으로 제 갈길 찾아서 commit이 돼요.<br>
 그래서 box에서 작업을 하다가 master로 checkout해주면 master가 있던 버전으로 돌아가게 돼요.
@@ -240,7 +240,7 @@ branch 목록과 하늘색 글씨를 통해서 누가봐도 box로 시선이 옮
     git log --graph --all --decorate            //전체 branch 상황 그래프로 표현
     
 
-![branch log](.\pictures\11_BranchLog.png)
+![11_BranchLog](https://user-images.githubusercontent.com/81542290/117533863-ea8a1e00-b029-11eb-9bd5-ca263d353395.png)
 
 그림을 보니 왜 이름이 branch라고 붙었는지 조금은 이해가 가시죠?
 
@@ -266,7 +266,7 @@ branch 목록과 하늘색 글씨를 통해서 누가봐도 box로 시선이 옮
 >       git commit -am "conflict fix"
 >       git checkout master
 >
->![conflictfix](.\pictures\12_ConflictFix.png)
+![12_ConflictFix](https://user-images.githubusercontent.com/81542290/117533844-e4943d00-b029-11eb-95ac-75ce20fe5072.png)
 
 
 <br><br>
@@ -276,7 +276,7 @@ branch 목록과 하늘색 글씨를 통해서 누가봐도 box로 시선이 옮
 
     git merge box //master를 box와 병합
 
-![merge](.\pictures\13_merge.png)
+![13_merge](https://user-images.githubusercontent.com/81542290/117533845-e5c56a00-b029-11eb-9d0e-175114c382dc.png)
 
 와! 잘 합쳐졌네요 ㅎㅎ
 
@@ -287,7 +287,7 @@ merge는 방금처럼 두 갈래로 갈라졌던 것이 그대로 남지만 reba
 
     git rebase box
 
-![rebase](.\pictures\14_rebase.png)
+![14_rebase](https://user-images.githubusercontent.com/81542290/117533846-e5c56a00-b029-11eb-8865-e26f0c571ec1.png)
 
 이렇게 말이죠!
 
@@ -325,8 +325,8 @@ github에 올렸더니 친구가 README.md 파일을 작성했다고 하네요?
 ### pull
 
     git pull
-
-![pull](.\pictures\15_pull.png)
+    
+![15_pull](https://user-images.githubusercontent.com/81542290/117533847-e65e0080-b029-11eb-8bc9-0f91171dab40.png)
 
 그럼 저희도 설명서를 마저 작성하고 github에 올린 뒤 마무리해볼까요?
 
@@ -343,7 +343,7 @@ clone은 pull하고 동일한 효과를 내요. 하지만 다른 점은, clone�
 
     git clone https://github.com/ParkCH753/MarkDownAssignment
 
-![clone](.\pictures\16_clone.png)
+![16_clone](https://user-images.githubusercontent.com/81542290/117533848-e65e0080-b029-11eb-9e98-9de4e1235df1.png)
 
 아까 clone은 처음 생성할 때 사용하는 것이라 했죠? 그래서 따로 `git init`하지 않은 상태에서 진행해도 clone이 생성돼요.
 
