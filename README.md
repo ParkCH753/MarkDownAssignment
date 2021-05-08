@@ -26,7 +26,7 @@ git 명령어는 맨 앞에 git을 붙이고 뒤에 명령어, 옵션 등을 붙
 
 먼저 작업을 할 폴더로 이동해준뒤 이 폴더에서 git으로 작업을 할 것이라는 표시를 해주어야 합니다.
 
-![폴더생성](pictures\0_fordercreate.png)
+![폴더생성](.\pictures\0_fordercreate.png)
 ![init](\pictures\1_init.png)<br>
 
 <br>
