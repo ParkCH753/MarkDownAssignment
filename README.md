@@ -82,7 +82,11 @@ git에 대한 여러가지 정보를 수정하고 설정할 수 있습니다.<br
 
     git status
 
+|옵션| 용도| 
+|---|---|
+| -s |간단히 표시|
 
+<br><br>
 ![3_status](https://user-images.githubusercontent.com/81542290/117533852-e78f2d80-b029-11eb-84c4-b4adbb439a85.png)
 
 <br>보아하니,, 빨간색으로,, 우리가 작성한 설명서가 있고 untracked 되어있다고 뜨네요?<br>
@@ -98,7 +102,14 @@ git에다가 버전을 만드는 것을 `commit`이라고 합니다. 그런데 g
     git add MarkDownAssignment.md
     git status
 
-<br>![4_add](https://user-images.githubusercontent.com/81542290/117533853-e827c400-b029-11eb-8003-2676d1d83f69.png)<br><br>
+
+|옵션| 용도| 
+|---|---|
+| . |하위 디렉토리 모두|
+| -A |루트 디렉토리부터 모두|
+| -p |하나씩 확인하며 넘김|
+
+<br><br><br>![4_add](https://user-images.githubusercontent.com/81542290/117533853-e827c400-b029-11eb-8003-2676d1d83f69.png)<br><br>
 
 오 초록색으로 뜨니까 그래도 조금 기분이 좋네요.
 ### commit
@@ -107,7 +118,13 @@ git에다가 버전을 만드는 것을 `commit`이라고 합니다. 그런데 g
     git commit -am "First commit"
     git log
 
-![5_commit](https://user-images.githubusercontent.com/81542290/117533854-e827c400-b029-11eb-9c65-985fb2f3c92f.png)
+
+|옵션| 용도| 
+|---|---|
+| -m |간단한 메모|
+| -a | add 생략 |
+
+<br><br>![5_commit](https://user-images.githubusercontent.com/81542290/117533854-e827c400-b029-11eb-9c65-985fb2f3c92f.png)
 <br><br> 명령어 뒤에 붙은 `"First commit"`은 이 버전에 대한 설명을 의미합니다. 로그에서 이 버전이 어떤 수정사항/내용의 버전인지 확인할 수 있습니다.
 
 ### log
