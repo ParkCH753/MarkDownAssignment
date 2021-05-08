@@ -444,6 +444,7 @@
 
 
 <br>
+<<<<<<< HEAD
 # MARKDOWN 사용법
 
 ## 1. 제목 만들기
@@ -1032,3 +1033,5 @@
 |\||파이프|
 
 https://github.com/ParkCH753/GFM-practice/blob/main/README.md
+=======
+>>>>>>> 475ebe5d8c74d4054d1c50f0e8da514e003dd9a5
