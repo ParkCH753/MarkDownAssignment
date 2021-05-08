@@ -208,6 +208,7 @@ HEAD가 First commit에 위치한다고 뜨면서 log에도 두번째 커밋이 
 |-am | 주석 바로 입력<br><code>git tag -am "주석"|
 |-n| 주석과 함께 tag 목록 보기 <br><code>git tag -n|
 |-d| 주석 삭제<br><code>git tag -d <태그이름>|
+
 <br><br><br><br>
 
 # 3. branch로 작업하기
