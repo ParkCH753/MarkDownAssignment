@@ -22,7 +22,7 @@ git 명령어는 맨 앞에 git을 붙이고 뒤에 명령어, 옵션 등을 붙
 
 <br><br><br>
 
-## git 폴더 설정
+## gitgit
 
 먼저 작업을 할 폴더로 이동해준뒤 이 폴더에서 git으로 작업을 할 것이라는 표시를 해주어야 합니다.
 
@@ -352,7 +352,7 @@ clone은 pull하고 동일한 효과를 내요. 하지만 다른 점은, clone�
 
 |명령|위치|
 | :---:| :---: |
-|init|[init](##git-폴더-설정)|
+|init|[init](##gitgit)|
 |config|[config](##git-사용자-설정)|
 |status|[status](###status)
 |add|[add](###add)
